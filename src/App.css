@@ -1,0 +1,434 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #eef3fb;
+}
+
+.app {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.header h1 {
+  font-size: 52px;
+  color: #142c72;
+}
+
+.header p {
+  margin-top: 10px;
+  color: #6b7280;
+  font-size: 22px;
+}
+
+.summary-card {
+  background: linear-gradient(135deg,#2F80ED,#7B3FF2);
+  color: white;
+  border-radius: 22px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 20px 45px rgba(47,128,237,.28);
+}
+
+.summary-box {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 35px;
+}
+
+.summary-box p {
+  font-size: 20px;
+}
+
+.summary-box h2 {
+  font-size: 52px;
+  margin: 8px 0;
+}
+
+.summary-box span {
+  opacity: .9;
+}
+
+.divider {
+  width: 1px;
+  height: 120px;
+  background: rgba(255,255,255,.3);
+}
+
+@media(max-width:900px){
+
+.summary-card{
+
+flex-direction:column;
+
+gap:30px;
+
+}
+
+.divider{
+
+display:none;
+
+}
+
+.header h1{
+
+font-size:38px;
+
+}
+
+.header p{
+
+font-size:18px;
+
+}
+
+.summary-box h2{
+
+font-size:38px;
+
+}
+
+}
+
+/* ==========================
+   Expense Form Card
+========================== */
+
+
+.form-card {
+  background: #ffffff;
+  margin-top: 35px;
+  border-radius: 22px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.plus-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgb(237, 242, 255);
+  color: rgb(37, 86, 164);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.form-title h2 {
+  color: rgb(31, 59, 130);
+  font-size: 32px;
+}
+
+.expense-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: rgb(31, 59, 130);
+}
+
+/* Inputs & Select */
+
+.input-group input,
+.input-group select {
+  height: 58px;
+  padding: 0 18px;
+  font-size: 16px;
+  border: 1px solid rgb(217, 223, 235);
+  border-radius: 12px;
+  background: rgb(248, 250, 252);
+  color: rgb(51, 65, 85);
+  transition: all 0.25s ease;
+}
+
+/* Placeholder */
+
+.input-group input::placeholder {
+  color: rgb(148, 163, 184);
+}
+
+/* Date Input */
+
+.input-group input[type="date"] {
+  color: rgb(51, 65, 85);
+}
+
+/* Dropdown */
+
+.input-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* Focus */
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  background: rgb(255, 255, 255);
+  border-color: rgb(37, 86, 164);
+  box-shadow: 0 0 0 4px rgba(37, 86, 164, 0.12);
+}
+
+/* Button */
+
+.button-wrapper {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.button-wrapper button {
+  width: 260px;
+  height: 56px;
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(
+    135deg,
+    rgb(37, 86, 164),
+    rgb(74, 99, 255)
+  );
+  transition: all 0.25s ease;
+}
+
+.button-wrapper button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(37, 86, 164, 0.3);
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .expense-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .expense-form {
+    grid-template-columns: 1fr;
+  }
+
+  .button-wrapper button {
+    width: 100%;
+  }
+
+  .form-title h2 {
+    font-size: 24px;
+  }
+
+  .form-card {
+    padding: 25px;
+  }
+}
+/* ===============================
+   Expense Section
+================================ */
+
+.expense-section {
+  margin-top: 45px;
+}
+
+.expense-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.expense-header h2 {
+  color: #1f3b82;
+  font-size: 32px;
+}
+
+.expense-header span {
+  background: #edf2ff;
+  color: #2563eb;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===============================
+   Expense Card
+================================ */
+
+.expense-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.07);
+  transition: .25s ease;
+}
+
+.expense-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}
+
+.expense-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense-category {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: #edf4ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+.expense-category h3 {
+  color: #1f3b82;
+  margin-bottom: 5px;
+}
+
+.expense-category p {
+  color: #6b7280;
+}
+
+.expense-amount {
+  color: #16a34a;
+  font-size: 30px;
+}
+
+.expense-bottom {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense-date {
+  color: #6b7280;
+}
+
+.delete-btn {
+  border: 1px solid #ef4444;
+  background: white;
+  color: #ef4444;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .25s;
+  font-weight: 600;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.expense-top{
+flex-direction:column;
+align-items:flex-start;
+gap:18px;
+}
+
+.expense-bottom{
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+}
+
+.expense-header{
+flex-direction:column;
+gap:10px;
+align-items:flex-start;
+}
+
+}
+
+/* Force consistent form styles */
+
+.input-group input,
+.input-group select {
+  background: #f8fafc !important;
+  color: #334155 !important;
+}
+
+.input-group input::placeholder {
+  color: #94a3b8 !important;
+}
+
+.input-group input[type="date"] {
+  color: #334155 !important;
+}
+
+.input-group select option {
+  background: #ffffff;
+  color: #334155;
+}
