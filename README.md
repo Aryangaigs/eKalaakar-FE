@@ -39,7 +39,7 @@ npm run dev
 Runs on:
 
 ```
-http://localhost:5173
+https://e-kalaakar-fe-m19t.vercel.app/
 ```
 
 ## 🔗 API
